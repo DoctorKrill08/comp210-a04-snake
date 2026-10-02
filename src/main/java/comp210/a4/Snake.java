@@ -1,5 +1,7 @@
 package comp210.a4;
 
+import org.w3c.dom.Node;
+
 /**
  * The snake's body, stored as a queue of Cells.
  *
@@ -59,6 +61,11 @@ public class Snake {
      */
     public void advance(Cell newHead, boolean grow) {
         // TODO: two queue operations, one of them only when not growing
+        //Tail is removed and newHead becomes the head
+        if (!grow) {
+            body.dequeue();
+        }
+        body.enqueue(newHead);
     }
 
     /**
@@ -67,6 +74,7 @@ public class Snake {
      */
     public boolean shrink() {
         // TODO
-        return false;
+        body.dequeue();
+        return !body.isEmpty();
     }
 }
