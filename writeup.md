@@ -1,9 +1,9 @@
 # A4 Write-up
 
-**Name:**
-**Onyen:**
-**Game URL:** https://bridges-cs.herokuapp.com/assignments/4/
-**Bomb rule I played with (SHRINK or GAME_OVER):**
+**Name:** Ethan Kim
+**Onyen:** ewk
+**Game URL:** [https://bridges-cs.herokuapp.com/assignments/4/](https://bridges-games.herokuapp.com/assignments/4/DoctorKrill#)
+**Bomb rule I played with (SHRINK or GAME_OVER):** SHRINK
 
 Three questions, 20 points. A few sentences each. Where a question asks for a
 number, show where it came from.
