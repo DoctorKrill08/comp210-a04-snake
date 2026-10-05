@@ -25,7 +25,13 @@ Now do the same for the autograder's speed test. It fills a queue with
 queue stays at 400,000. Roughly how many nodes would those enqueues visit?
 
 ```
+Enqueue would run at O(n) because it has to go through each node in the linked list once. 
+Enqueue would visit 3500 nodes a second. You would probably notice because the game will be using signficantly more memory than necessary.
 
+The enqueues visit about 2.4 x 10^11 nodes.
+Because to build the 400,000 initial nodes it would need to visit 1 + 2 + 3 + 4 ... + 400,000 which is about 8 x 10^10.
+For the 400,000 dequeue enqueue sequence, the corresponding enqueue would visit 400,000 nodes x 400,000 times so about 1.6 x 10^11 nodes
+So in total this adds up to 8x10^10 + 1.6x10^11 equals about 2.4x10^11 or 240000000000 nodes visited.
 ```
 
 ---
@@ -42,7 +48,8 @@ course that would make "is the snake on this cell?" fast, and say what it
 would cost to keep it up to date as the snake moves.
 
 ```
-
+When a snake eats an apple, contains visits n cells and is called 30 x 30 times so 900n nodes are iterated through.
+An array/matrix where when you check a specific coordinate, it returns what is occupying it.
 ```
 
 ---
@@ -57,5 +64,7 @@ each tick need that `LinkedQueue` does not have, and why is that operation hard
 to make O(1) on a singly linked list?
 
 ```
-
+The head is in the back because it makes it easy to remove the current head without effecting other nodes. The tail is in the front because it makes it easy to add another node to the snake.
+If it were flipped, then to move, the tail would have to be popped/removed (and the item before the tail would have to become a tail) and the head would have to grow meaning the added node's next value would have to be the head value and the head will become this added node.
+This is hard to make O(1) because for the tail operation, the code would need to iterate through and find the item before the tail (because queues are FIFO) to set its next value to null.
 ```
